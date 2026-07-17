@@ -1,0 +1,8 @@
+
+React Query
+Zustand
+Tremor
+Tailwind
+Bootstrap
+Mui material
+Sonner

@@ -1,0 +1,123 @@
+.start-screen {
+  width: 350px;
+  height: 350px;
+
+  margin-top: 100px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 16px;
+  background: linear-gradient(135deg, #6c63ff, #8b5cf6);
+  color: white;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.start-screen h2 {
+  margin: 0;
+  font-size: 34px;
+}
+
+.start-screen p {
+  margin-top: 15px;
+  font-size: 18px;
+  opacity: 0.9;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* --------------------------------------------------------------------------------------------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 80px);
+  grid-template-rows: repeat(5, 80px);
+  gap: 12px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.cell {
+  background: linear-gradient(135deg, #6c63ff, #8b5cf6);
+  border-radius: 12px;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.25s;
+  box-shadow: none;
+}
+
+.highlight {
+  transform: scale(1.12);
+  border: 2px solid #ffd700;
+  box-shadow:
+    0 0 5px #ffd700,
+    0 0 5px #ffd700,
+    0 0 5px rgba(255, 215, 0, 0.8);
+  animation: pulse 0.8s infinite alternate;
+}
+
+.cellHidden {
+  background: linear-gradient(145deg, #5a5a5a, #444);
+  border: 2px solid #666;
+  color: transparent; /* Oculta el contenido si lo hubiera */
+  opacity: 0.8;
+  cursor: not-allowed;
+  filter: grayscale(100%);
+}
+
+/* --------------------------------------------------------------------------------------------- */
+
+.spin-btn {
+  margin-top: 50px;
+  width: 100px;
+  height: 100px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+
+  background: radial-gradient(circle at 30% 30%, #7dff5d, #2fae1f);
+  color: white;
+
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  box-shadow:
+    0 8px 0 #1d6e14,
+    0 12px 25px rgba(0, 0, 0, 0.35),
+    inset 0 6px 12px rgba(255, 255, 255, 0.4),
+    inset 0 -8px 12px rgba(0, 0, 0, 0.2);
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.spin-btn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.08);
+}
+
+.spin-btn:active {
+  transform: translateY(6px);
+  box-shadow:
+    0 2px 0 #1d6e14,
+    0 5px 12px rgba(0, 0, 0, 0.3),
+    inset 0 6px 12px rgba(255, 255, 255, 0.35),
+    inset 0 -8px 12px rgba(0, 0, 0, 0.25);
+}

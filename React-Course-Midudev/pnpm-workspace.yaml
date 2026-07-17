@@ -1,0 +1,5 @@
+packages:
+  - "projects/*"
+allowBuilds:
+  "@swc/core": true
+  esbuild: true

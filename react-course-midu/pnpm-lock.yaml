@@ -345,7 +345,7 @@ importers:
         specifier: ^4.5.14
         version: 4.5.14(@types/node@25.9.4)(lightningcss@1.32.0)
 
-  projects/07-react-router-chollo:
+  projects/07-react-router-fruitgame:
     dependencies:
       path-to-regexp:
         specifier: 8.4.2

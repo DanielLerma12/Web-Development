@@ -1,0 +1,79 @@
+
+-Create monorepo:
+
+-package.json root folder:
+
+{
+  "name": "react-projects",
+  "private": true,
+  "workspaces": ["projects/*"]
+}
+
+or:
+
+{
+  "name": "react-test-projects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielLerma12/ReactCourse.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/DanielLerma12/ReactCourse/issues"
+  },
+  "homepage": "https://github.com/DanielLerma12/ReactCourse#readme",
+  "private": true,
+  "workspaces": [
+    "projects/*"
+  ]
+}
+
+-npm install
+
+-Create gitignore if not created yet
+
+-Remove gitignore, packagejson locked, from inner folders
+
+----------------------------------------------
+
+-Using pnpm instead of npm:
+
+-Install pnpm:
+
+npm install -g pnpm
+
+Remove node modules and package-lock.json:
+
+Remove-Item -Recurse -Force node_modules
+Remove-Item package-lock.json
+
+-Delete node modules in inner folders
+
+-Create yaml in root folder and config monorepo:
+
+pnpm-workspace.yaml
+
+packages:
+  - "projects/*"
+
+-Install pnpm in root folder:
+
+pnpm install
+
+Aprove esbuild, @swc/core if needed:
+
+pnpm approve-builds
+
+-If store folder was generated in D:, ask AI about changing the store folder
+-(Deleting all node modules in root and inner folders worked once before changing folders)
+
+

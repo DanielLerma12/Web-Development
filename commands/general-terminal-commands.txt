@@ -1,0 +1,28 @@
+
+-Create folders:
+
+mkdir
+
+----------------------------------------------
+
+-Create package.json:
+
+npm init -y
+
+----------------------------------------------
+
+-Install debounce:
+
+npm install just-debounce-it -E
+
+----------------------------------------------
+
+-Install Google Generative Ai package:
+
+npm install @google/generative-ai
+
+
+
+
+
+

@@ -49,7 +49,15 @@ export const EditUser = () => {
   );
 };
 
-export const EditUserModal = ({ open, onClose, children }) => {
+export const EditUserModal = ({
+  open,
+  onClose,
+  children,
+}: {
+  open: boolean;
+  onClose: () => void;
+  children: React.ReactNode;
+}) => {
   return (
     <Dialog open={open} onClose={onClose} static={true} className="z-50">
       <DialogPanel

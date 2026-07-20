@@ -1,0 +1,5 @@
+
+-Notes:
+
+Window object does not exist in node, because it is an object from browser
+Use promisify when working with callback-based functions that do not return promises by default

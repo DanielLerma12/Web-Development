@@ -15,9 +15,11 @@ export const useUsersActions = () => {
     toast(`Usuario [${name}] borrado correctamente`);
   };
 
-  const handleClickAddUser = (event: React.MouseEvent) => {
+  const handleClickAddUser = (event: React.SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const form = event.currentTarget as HTMLFormElement;
+
+    const form = event.currentTarget;
+
     const formData = new FormData(form);
 
     const name = formData.get("name") as string;

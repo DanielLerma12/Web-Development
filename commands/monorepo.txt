@@ -9,7 +9,7 @@
   "workspaces": ["projects/*"]
 }
 
-or:
+-or:
 
 {
   "name": "react-test-projects",
@@ -37,11 +37,10 @@ or:
   ]
 }
 
--npm install
+npm install
 
--Create gitignore if not created yet
-
--Remove gitignore, packagejson locked, from inner folders
+Create gitignore if not created yet
+Remove gitignore, packagejson locked, from inner folders
 
 ----------------------------------------------
 
@@ -56,7 +55,7 @@ Remove node modules and package-lock.json:
 Remove-Item -Recurse -Force node_modules
 Remove-Item package-lock.json
 
--Delete node modules in inner folders
+Delete node modules in inner folders
 
 -Create yaml in root folder and config monorepo:
 

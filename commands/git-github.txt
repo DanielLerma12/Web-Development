@@ -50,9 +50,7 @@ staging: select and prepare the specific files that will be part of your next ve
 
 HEAD: where the work is located in the moment
 
--git identifies commits with automatic ID number (Hash(digital footprint)) or the message-descryption
-
--when creating repositories, one is local with git, then one is created on github (cloud)
+git identifies commits with automatic ID number (Hash(digital footprint)) or the message-descryption
 
 
 

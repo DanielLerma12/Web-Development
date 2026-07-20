@@ -24,7 +24,6 @@ main {
   list-style: none;
   margin: 0px;
   padding: 0px;
-
   display: grid;
   width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

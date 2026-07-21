@@ -1,4 +1,4 @@
-// using promises and CommonJS, iffy function and async
+// using promises and CommonJS, iffy function for top level or async
 const { readFile } = require("node:fs/promises");
 
 (async () => {

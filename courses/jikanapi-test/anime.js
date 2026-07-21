@@ -12,138 +12,143 @@ animeNavSearchInput.addEventListener("keydown", async (event) => {
 
     const animeName = animeNavSearchInput.value;
 
-    const response = await fetch(
-      `https://api.jikan.moe/v4/anime?q=${animeName}`,
-    );
+    try {
+      const response = await fetch(
+        `https://api.jikan.moe/v4/anime?q=${animeName}`,
+      );
 
-    const data = await response.json();
+      const data = await response.json();
 
-    /* innerHTML new data deletion */
-    animeNavResultsContainer.innerHTML = "";
+      /* innerHTML new data deletion */
+      animeNavResultsContainer.innerHTML = "";
 
-    /* for each anime */
-    data.data.forEach((anime) => {
-      /* for each studio */
-      let stdlb = "";
+      /* for each anime */
+      data.data.forEach((anime) => {
+        /* for each studio */
+        let stdlb = "";
 
-      anime.studios.forEach((studio) => {
-        if (stdlb == "") {
-          stdlb = studio.name;
+        anime.studios.forEach((studio) => {
+          if (stdlb == "") {
+            stdlb = studio.name;
+          } else {
+            stdlb = stdlb + ", " + studio.name;
+          }
+        });
+
+        if (!anime.studios?.length) {
+          stdlb = "Unknown";
+        }
+
+        /* for each date */
+        let dateFrom = "Unknown";
+        let dateTo = "Unknown";
+        let formattedDate = "Unknown";
+
+        if (anime.episodes > 1) {
+          if (anime.aired.from) {
+            const [year, month, day] = anime.aired.from
+              .split("T")[0]
+              .split("-");
+
+            dateFrom = `${day}-${month}-${year}`;
+          }
+
+          if (anime.aired.to) {
+            const [year, month, day] = anime.aired.to.split("T")[0].split("-");
+
+            dateTo = `${day}-${month}-${year}`;
+          }
+
+          formattedDate = `${dateFrom} to ${dateTo}`;
         } else {
-          stdlb = stdlb + ", " + studio.name;
-        }
-      });
+          if (anime.aired.from) {
+            const [year, month, day] = anime.aired.from
+              .split("T")[0]
+              .split("-");
 
-      if (!anime.studios?.length) {
-        stdlb = "Unknown";
-      }
-
-      /* for each date */
-      let dateFrom = "Unknown";
-      let dateTo = "Unknown";
-      let formattedDate = "Unknown";
-
-      if (anime.episodes > 1) {
-        if (anime.aired.from) {
-          const [year, month, day] = anime.aired.from.split("T")[0].split("-");
-
-          dateFrom = `${day}-${month}-${year}`;
+            formattedDate = `${day}-${month}-${year}`;
+          } else {
+            formattedDate = "Unknown";
+          }
         }
 
-        if (anime.aired.to) {
-          const [year, month, day] = anime.aired.to.split("T")[0].split("-");
+        /* for each genre */
+        let genlb = "";
 
-          dateTo = `${day}-${month}-${year}`;
+        anime.genres.forEach((genre) => {
+          if (genlb == "") {
+            genlb = genre.name;
+          } else {
+            genlb = genlb + ", " + genre.name;
+          }
+        });
+
+        if (!anime.genres?.length) {
+          genlb = "Unknown";
         }
 
-        formattedDate = `${dateFrom} to ${dateTo}`;
-      } else {
-        if (anime.aired.from) {
-          const [year, month, day] = anime.aired.from.split("T")[0].split("-");
+        /* for each demographics */
+        let demographicslb = "";
 
-          formattedDate = `${day}-${month}-${year}`;
+        anime.demographics.forEach((demographic) => {
+          if (demographicslb == "") {
+            demographicslb = demographic.name;
+          } else {
+            demographicslb = demographicslb + ", " + demographic.name;
+          }
+        });
+
+        if (!anime.demographics?.length) {
+          demographicslb = "Unknown";
+        }
+
+        /* for each synopsis */
+        let synolb = "";
+
+        if (!anime.synopsis) {
+          synolb = "Unknown";
         } else {
-          formattedDate = "Unknown";
+          synolb = anime.synopsis;
         }
-      }
 
-      /* for each genre */
-      let genlb = "";
+        /* for each rank */
+        let ranklb = "";
 
-      anime.genres.forEach((genre) => {
-        if (genlb == "") {
-          genlb = genre.name;
+        if (!anime.rank) {
+          ranklb = "-";
         } else {
-          genlb = genlb + ", " + genre.name;
+          ranklb = anime.rank;
         }
-      });
 
-      if (!anime.genres?.length) {
-        genlb = "Unknown";
-      }
+        /* for each score */
+        let scorelb = "";
 
-      /* for each demographics */
-      let demographicslb = "";
-
-      anime.demographics.forEach((demographic) => {
-        if (demographicslb == "") {
-          demographicslb = demographic.name;
+        if (!anime.score) {
+          scorelb = "-";
         } else {
-          demographicslb = demographicslb + ", " + demographic.name;
+          scorelb = anime.score;
         }
-      });
 
-      if (!anime.demographics?.length) {
-        demographicslb = "Unknown";
-      }
+        /* for each popularity */
+        let populb = "";
 
-      /* for each synopsis */
-      let synolb = "";
+        if (!anime.popularity) {
+          populb = "-";
+        } else {
+          populb = anime.popularity;
+        }
 
-      if (!anime.synopsis) {
-        synolb = "Unknown";
-      } else {
-        synolb = anime.synopsis;
-      }
+        /* for each title */
+        let titlelb = "";
 
-      /* for each rank */
-      let ranklb = "";
+        if (anime.title.length > 86) {
+          titlelb = `${anime.title.substring(0, 86)}...`;
+        } else {
+          titlelb = anime.title;
+        }
 
-      if (!anime.rank) {
-        ranklb = "-";
-      } else {
-        ranklb = anime.rank;
-      }
-
-      /* for each score */
-      let scorelb = "";
-
-      if (!anime.score) {
-        scorelb = "-";
-      } else {
-        scorelb = anime.score;
-      }
-
-      /* for each popularity */
-      let populb = "";
-
-      if (!anime.popularity) {
-        populb = "-";
-      } else {
-        populb = anime.popularity;
-      }
-
-      /* for each title */
-      let titlelb = "";
-
-      if (anime.title.length > 86) {
-        titlelb = `${anime.title.substring(0, 86)}...`;
-      } else {
-        titlelb = anime.title;
-      }
-
-      /* Main grid fill */
-      animeNavResultsContainer.innerHTML += `<div class="a-srch-rlt-dad-cont">
+        /* Main grid fill */
+        animeNavResultsContainer.innerHTML += `<div class="a-srch-rlt-dad-cont">
                 <span class="a-srch-rlt-img-cont">
                     <img src="${anime.images.jpg.image_url}" alt="anime">
                 </span>
@@ -216,7 +221,13 @@ animeNavSearchInput.addEventListener("keydown", async (event) => {
 
             </div>
             `;
-    });
+      });
+    } catch (error) {
+      console.log(
+        "Error al consultar, probablemente la api de Jikan sigue fallando.",
+        error,
+      );
+    }
   }
 });
 

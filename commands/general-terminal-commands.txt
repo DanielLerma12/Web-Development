@@ -5,20 +5,6 @@ mkdir
 
 ----------------------------------------------
 
--Create package.json, init project with npm or pnpm:
-
-npm init -y
-pnpm init
-
-----------------------------------------------
-
--Add and install differences:
-
-npm or pnpm add name --> install new dependencie
-npm or pnpm install name --> install dependencies from package.json
-
-----------------------------------------------
-
 -Install debounce:
 
 npm install just-debounce-it -E

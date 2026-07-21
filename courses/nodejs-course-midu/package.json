@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:1": "node --watch class-02/01-http.js",
+    "dev:2": "node --watch class-02/pokemon/02-routing.js"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +22,8 @@
     "picocolors": "^1.1.1"
   },
   "devDependencies": {
-    "eslint": "^10.7.0"
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.7.0",
+    "globals": "^17.7.0"
   }
 }

@@ -1,0 +1,28 @@
+
+-Install Eslint:
+
+install eslint extension on ide
+
+pnpm add eslint -D
+pnpm add @eslint/js -D // Js config
+pnpm add globals -D // list of global variables
+
+----------------------------------------------
+
+-Configure eslint for js:
+
+eslint.config.js file
+
+import js from "@eslint/js";
+import globals from "globals";
+
+export default [
+  js.configs.recommended,
+  {
+    languageOptions: {
+      globals: {
+        ...globals.node
+      }
+    }
+  }
+];

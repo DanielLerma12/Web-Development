@@ -1,31 +1,21 @@
 {
-  "name": "react-test-projects",
+  "name": "react-course-midu",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DanielLerma12/ReactCourse.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/DanielLerma12/ReactCourse/issues"
-  },
-  "homepage": "https://github.com/DanielLerma12/ReactCourse#readme",
   "private": true,
+  "type": "module",
   "workspaces": [
-    "projects/*"
-  ],
-  "devDependencies": {
-    "eslint": "^10.4.1"
-  },
-  "dependencies": {
-    "todomvc-app-css": "2.4.3"
-  }
+    "projects/01-twitter-follow-card",
+    "projects/01.1-calculator",
+    "projects/02-tic-tac-toe",
+    "projects/02.1-follow-the-square",
+    "projects/03-mouse-follower",
+    "projects/04-react-prueba-tecnica",
+    "projects/05-buscador-peliculas",
+    "projects/06-shopping-cart",
+    "projects/07-react-router-fruitgame",
+    "projects/08-todo-app-ts",
+    "projects/09-google-translate-clone",
+    "projects/10-prueba-tecnica-empresa-55k",
+    "projects/11-javascript-quiz"
+  ]
 }

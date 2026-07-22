@@ -1,8 +1,14 @@
 
-React Query
-Zustand
-Tremor
-Tailwind
-Bootstrap
-Mui material
-Sonner
+bootstrap
+canvas-confetti
+google/generative-ai
+just-debounce-it
+mui-material
+react-query-devtools
+react-router
+react-syntax-highlighter
+sonner
+tremor
+tailwind
+todomvc-app-css
+zustand

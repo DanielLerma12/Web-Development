@@ -1,21 +1,18 @@
-# Dependencias
+# Dependencies
 node_modules/** linguist-vendored
 
-# Código compilado
+# Build output
 dist/** linguist-generated=true
 dist-ssr/** linguist-generated=true
 
-# Reportes de pruebas
+# Test output
 playwright-report/** linguist-generated=true
 test-results/** linguist-generated=true
 
-# Logs
-*.log linguist-generated=true
+# Local configuration
+.env linguist-vendored
+.env.local linguist-vendored
 
-# Archivos de entorno
-.env linguist-generated=true
-.env.local linguist-generated=true
-
-# Archivos del editor
-.vscode/** linguist-generated=true
-.idea/** linguist-generated=true
+# Editor files
+.vscode/** linguist-vendored
+.idea/** linguist-vendored

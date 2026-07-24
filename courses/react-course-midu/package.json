@@ -5,19 +5,19 @@
   "type": "module",
   "workspaces": [
     "projects/01-twitter-follow-card",
-    "projects/01.1-calculator",
+    "projects/01b-calculator",
     "projects/02-tic-tac-toe",
-    "projects/02.1-follow-the-square",
+    "projects/02b-follow-the-square",
     "projects/03-mouse-follower",
-    "projects/04-react-prueba-tecnica",
-    "projects/05-buscador-peliculas",
+    "projects/04-cat-api",
+    "projects/05-movie-finder",
     "projects/06-shopping-cart",
     "projects/07-react-router-fruitgame",
-    "projects/08-todo-app-ts",
-    "projects/09-google-translate-clone",
-    "projects/10-prueba-tecnica-empresa-55k",
-    "projects/10b-react-query-mutate",
-    "projects/11-javascript-quiz"
+    "projects/08-ts-todo-app",
+    "projects/09-ts-google-translate-clone",
+    "projects/10-ts-react-query",
+    "projects/10b-ts-react-query-mutate",
+    "projects/11-zustand-javascript-quiz"
   ],
   "dependencies": {
     "vite": "^8.1.5"

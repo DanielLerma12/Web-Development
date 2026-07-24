@@ -6,8 +6,7 @@ import { useUsers } from "./hooks/useUsers";
 import { useQueryClient } from "@tanstack/react-query";
 
 function App() {
-  const { isLoading, isError, users, data, fetchNextPage, hasNextPage } =
-    useUsers();
+  const { isLoading, isError, users, fetchNextPage, hasNextPage } = useUsers();
 
   const [showColors, setShowColors] = useState(false);
   const [sorting, setSorting] = useState<SortBy>(SortBy.NONE);
@@ -24,13 +23,13 @@ function App() {
     setSorting(newSortingValue);
   };
 
-  const originalData = useRef<DataUsers>(null);
+  const originalData = useRef<DataUsers[]>(undefined);
 
   useEffect(() => {
-    if (data && !originalData.current) {
-      originalData.current = structuredClone(data);
+    if (users && !originalData.current) {
+      originalData.current = queryClient.getQueryData(["users"]);
     }
-  }, [data]);
+  }, [users]);
 
   const handleReset = () => {
     queryClient.setQueryData(["users"], structuredClone(originalData.current));
@@ -38,7 +37,6 @@ function App() {
 
   const handleDeleteUser = (email: string) => {
     queryClient.setQueryData(["users"], (oldUsers: DataUsers) => {
-      console.log(oldUsers);
       if (!oldUsers) return oldUsers;
 
       return {

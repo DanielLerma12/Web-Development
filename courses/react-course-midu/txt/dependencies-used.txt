@@ -1,6 +1,8 @@
 
 bootstrap
 canvas-confetti
+cors
+express
 google/generative-ai
 just-debounce-it
 mui-material
@@ -11,4 +13,5 @@ sonner
 tremor
 tailwind
 todomvc-app-css
+vite(react-react-dom, js-typescript, eslint)
 zustand

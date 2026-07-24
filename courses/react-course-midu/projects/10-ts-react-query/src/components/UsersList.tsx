@@ -1,7 +1,7 @@
 import { SortBy, type User } from "../types.d";
 
 interface Props {
-  users: User[];
+  users: User[] | undefined;
   showColors: boolean;
   handleDeleteUser: (index: string) => void;
   toggleSortBy: (sortBy: SortBy) => void;
@@ -31,7 +31,7 @@ export function UsersList({
         </tr>
       </thead>
       <tbody>
-        {users.map((user, index) => {
+        {users?.map((user, index) => {
           const backgroundColor = index % 2 === 0 ? "#333" : "#555";
           return (
             <tr

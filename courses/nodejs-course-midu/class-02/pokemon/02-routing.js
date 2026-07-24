@@ -1,5 +1,5 @@
 const http = require("node:http");
-const dittoJSON = require("./ditto.json");
+const dittoJSON = require("../ditto.json");
 
 const processRequest = (req, res) => {
   const { method, url } = req;

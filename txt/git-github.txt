@@ -42,15 +42,15 @@ git mv "React Test Projects/01-twitter-follow-card" "projects/01-twitter-follow-
 
 ----------------------------------------------
 
--Notes:
+--Notes:
 
-repository: folder with version history
+-repository: folder with version history
 
-staging: select and prepare the specific files that will be part of your next version
+-staging: select and prepare the specific files that will be part of your next version
 
-HEAD: where the work is located in the moment
+-HEAD: where the work is located in the moment
 
-git identifies commits with automatic ID number (Hash(digital footprint)) or the message-descryption
+-git identifies commits with automatic ID number (Hash(digital footprint)) or the message-descryption
 
 
 

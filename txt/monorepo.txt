@@ -1,41 +1,15 @@
 
--Create monorepo:
+--Create monorepo:
 
 -package.json root folder:
 
 {
-  "name": "react-projects",
+  "name": "project-name",
   "private": true,
-  "workspaces": ["projects/*"]
+  "workspaces": ["projects-name/*"]
 }
 
 -or:
-
-{
-  "name": "react-test-projects",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DanielLerma12/ReactCourse.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/DanielLerma12/ReactCourse/issues"
-  },
-  "homepage": "https://github.com/DanielLerma12/ReactCourse#readme",
-  "private": true,
-  "workspaces": [
-    "projects/*"
-  ]
-}
 
 npm install
 
@@ -44,7 +18,7 @@ Remove gitignore, packagejson locked, from inner folders
 
 ----------------------------------------------
 
--Using pnpm instead of npm:
+--Using pnpm instead of npm:
 
 -Install pnpm:
 

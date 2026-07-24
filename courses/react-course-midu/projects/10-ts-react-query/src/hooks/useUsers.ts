@@ -17,7 +17,6 @@ export const useUsers = () => {
     isLoading,
     isError,
     users: data?.pages?.flatMap((page) => page.users) ?? [],
-    data,
     fetchNextPage,
     hasNextPage,
   };

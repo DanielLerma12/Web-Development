@@ -25,7 +25,7 @@ export default defineConfig({
 
 ----------------------------------------------
 
--Vite@Test initialization:
+--Vite@Test initialization:
 
 Install dependencies: npm install vitest happy-dom @testing-library/react @testing-library/user-event -D
 

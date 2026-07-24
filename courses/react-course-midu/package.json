@@ -16,6 +16,10 @@
     "projects/08-todo-app-ts",
     "projects/09-google-translate-clone",
     "projects/10-prueba-tecnica-empresa-55k",
+    "projects/10b-react-query-mutate",
     "projects/11-javascript-quiz"
-  ]
+  ],
+  "dependencies": {
+    "vite": "^8.1.5"
+  }
 }

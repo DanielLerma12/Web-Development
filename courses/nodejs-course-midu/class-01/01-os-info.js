@@ -1,4 +1,4 @@
-const os = require("node:os");
+const os = require("node:os"); // Window object does not exist in node, because it is an object from browser
 
 console.log("información del sistema operativo: ");
 console.log("---------------------------------- ");

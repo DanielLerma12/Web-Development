@@ -61,19 +61,28 @@ export const Game = () => {
   const [disabledSpin, setDisabledSpin] = useState(false);
 
   const crearCeldas = () => {
-    const visibles = [3, 7, 8, 9, 11, 12, 13, 14, 15, 17, 18, 19, 23];
+    const celdasVisibles = [3, 7, 8, 9, 11, 12, 13, 14, 15, 17, 18, 19, 23];
     const frutas = ["🍇", "🍉", "🍊", "🍎", "🍋‍🟩"];
 
-    const fruitArray = Array.from({ length: 13 }, () =>
+    const randomFruta = Array.from({ length: 13 }, () =>
       Math.floor(Math.random() * 5),
     );
 
     return Array.from({ length: 25 }).map((_, index) => ({
       id: index + 1,
-      visible: visibles.includes(index + 1),
-      fruta: visibles.includes(index + 1)
-        ? frutas[fruitArray[visibles.indexOf(index + 1)]]
+      visible: celdasVisibles.includes(index + 1),
+      fruta: celdasVisibles.includes(index + 1)
+        ? frutas[randomFruta[celdasVisibles.indexOf(index + 1)]]
         : null,
+    }));
+  };
+
+  const Matching = (celdas) => {
+    const frutaInit = celdas.find((c) => c.id === 11).fruta;
+
+    return celdas.map((celda) => ({
+      ...celda,
+      highlight: celda.visible && celda.fruta === frutaInit,
     }));
   };
 
@@ -113,17 +122,34 @@ export const Game = () => {
     }
   };
 
-  const Matching = (celdas) => {
-    const frutaInit = celdas.find((c) => c.id === 11)?.fruta;
-
-    return celdas.map((celda) => ({
-      ...celda,
-      highlight: celda.visible && celda.fruta === frutaInit,
-    }));
-  };
-
   return (
     <div>
+      <div className="background">
+        <span className="fruit">🍎</span>
+        <span className="fruit">🍌</span>
+        <span className="fruit">🍍</span>
+        <span className="fruit">🍉</span>
+        <span className="fruit">🍇</span>
+        <span className="fruit">🍒</span>
+        <span className="fruit">🍓</span>
+        <span className="fruit">🍊</span>
+        <span className="fruit">🥝</span>
+        <span className="fruit">🍐</span>
+        <span className="fruit">🍑</span>
+        <span className="fruit">🥥</span>
+        <span className="fruit">🍎</span>
+        <span className="fruit">🍌</span>
+        <span className="fruit">🍍</span>
+        <span className="fruit">🍉</span>
+        <span className="fruit">🍇</span>
+        <span className="fruit">🍒</span>
+        <span className="fruit">🍓</span>
+        <span className="fruit">🍊</span>
+        <span className="fruit">🥝</span>
+        <span className="fruit">🍐</span>
+        <span className="fruit">🍑</span>
+        <span className="fruit">🥥</span>
+      </div>
       <div
         style={{
           display: "flex",

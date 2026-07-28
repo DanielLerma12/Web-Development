@@ -1,4 +1,4 @@
-const z = require("zod");
+import z from "zod";
 
 const baseMovieSchema = z.object({
   title: z.string(),
@@ -26,17 +26,12 @@ const movieSchema = baseMovieSchema.extend({
   rate: baseMovieSchema.shape.rate.default(0),
 });
 
-function ValidateMovie(object) {
+export function ValidateMovie(object) {
   return movieSchema.safeParse(object);
 }
 
 const partialMovieSchema = baseMovieSchema.partial();
 
-function ValidatePartialMovie(object) {
+export function ValidatePartialMovie(object) {
   return partialMovieSchema.safeParse(object);
 }
-
-module.exports = {
-  ValidateMovie,
-  ValidatePartialMovie,
-};

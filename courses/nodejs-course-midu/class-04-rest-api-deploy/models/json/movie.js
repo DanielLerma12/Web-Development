@@ -1,4 +1,4 @@
-import movies from "../movies.json" with { type: "json" };
+import movies from "../../local/movies.json" with { type: "json" };
 import crypto from "node:crypto";
 
 export class MovieModel {

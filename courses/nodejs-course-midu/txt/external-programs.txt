@@ -1,5 +1,0 @@
-
-dbngin
-mysql-workbench
-
----con render mirar el tema de si funciona todo y la base de datos de mysql

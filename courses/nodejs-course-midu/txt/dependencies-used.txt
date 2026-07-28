@@ -3,7 +3,8 @@ cors
 eslint-js
 express
 globals
-mongodb - pen
 mysql2
 picocolors
+pg
+prisma
 zod

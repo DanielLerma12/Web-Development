@@ -18,18 +18,25 @@ Content-Type: application/json
     "director": "Darren Aronofsky",
     "duration": 156,
     "poster": "https://a.ltrbxd.com/resized/film-poster/3/1/6/3/1/1/316311-mother--0-1000-0-1500-crop.jpg?v=399e8950fd",
-    "genre": ["Drama", "Crime"]
+    "genre": ["Drama", "Crime"],
+    "rate": 7.8
 }
 
 ### Actualizar una película
-PATCH http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+PATCH http://localhost:1234/movies/e624b441-d4e9-43a8-9ff4-3fa7db1d6cfe
 Content-Type: application/json
 
 {
 
-    "year": 2000
+    "title": "Mother",
+    "year": 2017,
+    "director": "Darren Aronofsky",
+    "duration": 156,
+    "poster": "https://a.ltrbxd.com/resized/film-poster/3/1/6/3/1/1/316311-mother--0-1000-0-1500-crop.jpg?v=399e8950fd",
+    "genre": ["Drama", "Crime"],
+    "rate": 8.0
 
 }
 
 ### Borrar una película
-DELETE  http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+DELETE  http://localhost:1234/movies/e624b441-d4e9-43a8-9ff4-3fa7db1d6cfe

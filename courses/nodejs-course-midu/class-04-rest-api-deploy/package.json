@@ -5,9 +5,6 @@
   "license": "ISC",
   "author": "",
   "type": "module",
-  "engines": {
-    "node": "22.x"
-  },
   "main": "app.js",
   "scripts": {
     "start:prisma": "node server-with-prisma.js",

@@ -2,29 +2,25 @@ import movies from "../local/movies.json" with { type: "json" };
 
 import { prisma } from "../lib/prisma.js";
 
-await prisma.movie.deleteMany();
-await prisma.genre.deleteMany();
+const result2 = await prisma.movie.deleteMany();
+const result3 = await prisma.genre.deleteMany();
+
+console.log(result2);
+console.log(result3);
 
 async function main() {
+  const genres = [...new Set(movies.flatMap((movie) => movie.genre))];
+
+  await prisma.genre.createMany({
+    data: genres.map((name) => ({ name })),
+    skipDuplicates: true,
+  });
+
+  const dbGenres = await prisma.genre.findMany();
+
+  const genreMap = new Map(dbGenres.map((genre) => [genre.name, genre.id]));
+
   for (const movie of movies) {
-    const genres = [];
-
-    for (const genreName of movie.genre) {
-      const genre = await prisma.genre.upsert({
-        where: {
-          name: genreName,
-        },
-        update: {},
-        create: {
-          name: genreName,
-        },
-      });
-
-      genres.push({
-        id: genre.id,
-      });
-    }
-
     await prisma.movie.create({
       data: {
         title: movie.title,
@@ -35,13 +31,14 @@ async function main() {
         rate: movie.rate,
 
         genres: {
-          connect: genres,
+          connect: movie.genre.map((name) => ({
+            id: genreMap.get(name),
+          })),
         },
       },
     });
   }
 }
-
 main()
   .then(async () => {
     console.log("Seed completado");

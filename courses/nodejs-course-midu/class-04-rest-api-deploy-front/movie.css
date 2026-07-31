@@ -2,7 +2,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #203755;
+  background-color: #16181c;
   flex-direction: column;
 }
 
@@ -16,7 +16,7 @@ main {
 }
 
 h2 {
-  color: white;
+  color: #ccc;
 }
 
 div {
@@ -28,8 +28,8 @@ div {
 }
 
 div {
-  background: #244166;
-  border: 1px solid #e5e5e5;
+  background: #1b1e24;
+  border: 1px solid #ccc;
   border-radius: 16px;
   padding: 1rem;
   overflow: hidden;
@@ -44,13 +44,13 @@ div:hover {
 }
 
 p {
-  color: #adc1ec;
+  color: #ccc;
 }
 
 button {
   border: none;
-  background: #23629e;
-  color: white;
+  background: #2c313b;
+  color: #ccc;
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
   font-size: 0.9rem;
@@ -59,7 +59,7 @@ button {
 }
 
 button:hover {
-  background: #144470;
+  background: #424a58;
 }
 
 button:active {

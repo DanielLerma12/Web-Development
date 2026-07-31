@@ -25,8 +25,10 @@ fetch(`${API_URL}/movies/${id}`)
                 <input id="rate"  value="${movies.rate}"></input>
             </div>
             <button id="boton">Update</button>
-
           `;
+
+    const loading = document.getElementById("loading");
+    loading.hidden = true;
 
     const titulo = document.getElementById("titulo");
     const ano = document.getElementById("ano");

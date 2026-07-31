@@ -1,6 +1,9 @@
-const id = window.location.pathname.split("/").pop();
+import { API_URL } from "./config.js";
 
-fetch(`http://localhost:1234/movies/${id}`)
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+fetch(`${API_URL}/movies/${id}`)
   .then((res) => res.json())
   .then((movies) => {
     document.querySelector("main").innerHTML =
@@ -47,7 +50,7 @@ fetch(`http://localhost:1234/movies/${id}`)
       };
 
       try {
-        const res = await fetch(`http://localhost:1234/movies/${id}`, {
+        const res = await fetch(`${API_URL}/movies/${id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",

@@ -1,4 +1,6 @@
-import { API_URL } from "./client/config.js";
+import { API_URL } from "./config.js";
+
+console.log(API_URL);
 
 fetch(`${API_URL}/movies`)
   .then((res) => res.json())
@@ -27,7 +29,7 @@ fetch(`${API_URL}/movies`)
         const article = e.target.closest("article");
         const id = article.dataset.id;
         if (e.target.textContent === "Delete") {
-          fetch(`http://localhost:1234/movies/${id}`, {
+          fetch(`${API_URL}/movies/${id}`, {
             method: "DELETE",
           }).then((res) => {
             if (res.ok) {
@@ -37,7 +39,7 @@ fetch(`${API_URL}/movies`)
           });
         }
         if (e.target.textContent === "Edit") {
-          window.location.href = `/updatemovie/${id}`;
+          window.location.href = `./updatemovie.html?id=${id}`;
         }
       }
     });

@@ -1,3 +1,5 @@
+import { API_URL } from "./config.js";
+
 const titulo = document.getElementById("titulo");
 const ano = document.getElementById("ano");
 const director = document.getElementById("director");
@@ -20,7 +22,7 @@ boton.addEventListener("click", async (e) => {
   };
 
   try {
-    const res = await fetch("http://localhost:1234/movies", {
+    const res = await fetch(`${API_URL}/movies`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

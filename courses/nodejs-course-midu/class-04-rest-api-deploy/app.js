@@ -12,14 +12,6 @@ export const createApp = ({ movieModel }) => {
 
   app.use(express.static("client"));
 
-  app.get("/", (req, res) => {
-    res.sendFile(process.cwd() + "/client/index.html");
-  });
-
-  app.get("/updatemovie/:id", (req, res) => {
-    res.sendFile(process.cwd() + "/client/updatemovie.html");
-  });
-
   app.use("/movies", createMovieRouter({ movieModel }));
 
   const PORT = process.env.PORT ?? 1234; // usar en despliegue la variable de entorno del proceso

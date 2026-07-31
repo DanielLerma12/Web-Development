@@ -1,9 +1,0 @@
-  
-  -Package.json scripts:
-  
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev:1": "node --watch class-02/01-http.js",
-    "dev:2": "node --watch class-02/pokemon/02-routing.js",
-    "dev:3": "node --watch class-02/03-express.js"
-  },

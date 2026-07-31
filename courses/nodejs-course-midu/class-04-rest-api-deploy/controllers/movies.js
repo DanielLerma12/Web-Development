@@ -30,7 +30,7 @@ export class MovieController {
 
     if (!result.success) {
       // o !result.success
-      return res.status(400).json({ error: JSON.parse(result.error.message) });
+      return res.status(400).json(result.error.issues);
     }
 
     const newMovie = await this.movieModel.create({ input: result.data });
@@ -42,7 +42,7 @@ export class MovieController {
     const result = ValidatePartialMovie(req.body);
 
     if (!result.success) {
-      return res.status(400).json({ error: JSON.parse(result.error.message) });
+      return res.status(400).json(result.error.issues);
     }
 
     const { id } = req.params;

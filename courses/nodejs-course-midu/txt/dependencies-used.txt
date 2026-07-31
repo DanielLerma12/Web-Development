@@ -4,8 +4,10 @@ dotenv
 eslint-js
 express
 globals
+morgan
 mysql2
 picocolors
 pg
 prisma
+socket.io
 zod

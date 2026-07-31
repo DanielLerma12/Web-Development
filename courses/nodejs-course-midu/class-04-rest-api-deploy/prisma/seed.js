@@ -5,9 +5,6 @@ import { prisma } from "../lib/prisma.js";
 const result2 = await prisma.movie.deleteMany();
 const result3 = await prisma.genre.deleteMany();
 
-console.log(result2);
-console.log(result3);
-
 async function main() {
   const genres = [...new Set(movies.flatMap((movie) => movie.genre))];
 

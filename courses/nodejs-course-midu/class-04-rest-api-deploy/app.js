@@ -10,8 +10,14 @@ export const createApp = ({ movieModel }) => {
 
   app.use(corsMiddleware());
 
+  app.use(express.static("client"));
+
   app.get("/", (req, res) => {
-    res.send("<h1>Main Page</h1>");
+    res.sendFile(process.cwd() + "/client/index.html");
+  });
+
+  app.get("/updatemovie/:id", (req, res) => {
+    res.sendFile(process.cwd() + "/client/updatemovie.html");
   });
 
   app.use("/movies", createMovieRouter({ movieModel }));

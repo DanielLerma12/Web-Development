@@ -1,4 +1,4 @@
-import { API_URL } from "./config.js";
+import { API_URL } from "./client/config.js";
 
 fetch(`${API_URL}/movies`)
   .then((res) => res.json())

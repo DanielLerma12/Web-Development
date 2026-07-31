@@ -1,4 +1,6 @@
-fetch("http://localhost:1234/movies")
+import { API_URL } from "./config.js";
+
+fetch(`${API_URL}/movies`)
   .then((res) => res.json())
   .then((movies) => {
     const html = movies

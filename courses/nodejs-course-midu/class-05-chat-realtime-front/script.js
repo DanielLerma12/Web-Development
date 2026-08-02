@@ -1,3 +1,5 @@
+import { API_URL } from "./config";
+
 let username = localStorage.getItem("username");
 
 if (!username) {
@@ -12,7 +14,7 @@ if (!username) {
   localStorage.setItem("username", username);
 }
 
-const socket = io("http://localhost:3000", {
+const socket = io(`${API_URL}`, {
   auth: {
     serverOffset: 0,
     username,

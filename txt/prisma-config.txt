@@ -1,0 +1,69 @@
+
+-Install:
+
+npm install prisma @prisma/client
+
+-Initialize:
+
+npx prisma init
+
+-Configure schema.prisma, for example:
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+-Configure client:
+
+npx prisma generate // prisma client for reading schema, use the database and queries, execute each time schema changes
+
+-Client:
+
+// folder: lib/prisma.js
+
+import "dotenv/config";
+import { PrismaClient } from "./generated/prisma/client.ts";
+import { PrismaPg } from "@prisma/adapter-pg";
+
+const adapter = new PrismaPg({
+  connectionString: process.env.DATABASE_URL,
+});
+
+export const prisma = new PrismaClient({
+  adapter,
+});
+
+-Usage example:
+
+import { prisma } from "../../lib/prisma.js";
+
+const movies = await prisma.movies.findMany();
+
+-Usage with postgresql:
+
+-Install:
+
+npm install pg
+npm install @prisma/adapter-pg
+
+-Configure .env:
+
+DATABASE_URL="postgresql://postgres:password@db.xxxxx.supabase.co:5432/postgres"
+
+seed, package.json:
+
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
+
+push and pull:
+
+npx prisma db push // create database after creating the schema
+npx prisma db pull // if database is already created, and for each database update, then npx prisma generate
+
+// npx prisma generate on production build command

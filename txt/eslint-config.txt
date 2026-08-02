@@ -1,5 +1,5 @@
 
--Install Eslint:
+-Install:
 
 install eslint extension on ide
 
@@ -9,7 +9,7 @@ pnpm add globals -D // list of global variables
 
 ----------------------------------------------
 
--Configure eslint for js:
+-Configure for js:
 
 eslint.config.js file
 

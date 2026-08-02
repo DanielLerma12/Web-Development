@@ -12,9 +12,15 @@ console.log(pico.magenta("connected to Postgres supabase"));
 
 const app = express(); // express crea todo por uno, pero solo crea el servidor al momento de hacer listen, ahora esa lógica la maneja el server de http
 const server = createServer(app); // se crea un servidor que usa a app
+
+const ORIGINS = [
+  "http://127.0.0.1:5500",
+  "https://chat-socketio-front.onrender.com",
+];
+
 const io = new Server(server, {
   cors: {
-    origin: "http://127.0.0.1:5500",
+    origin: ORIGINS,
     methods: ["GET", "POST"],
   },
   connectionStateRecovery: {

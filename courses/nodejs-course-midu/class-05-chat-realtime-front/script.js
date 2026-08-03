@@ -26,6 +26,8 @@ const input = document.querySelector("#input");
 const messages = document.querySelector("#messages");
 
 socket.on("chat message", (result) => {
+  if (result.id === 1) messages.innerHTML = "";
+
   const date = new Date(result.created_at);
   const item = `
       <li>
@@ -39,31 +41,43 @@ socket.on("chat message", (result) => {
     `;
 
   messages.insertAdjacentHTML("beforeend", item);
+
   socket.auth.serverOffset = result.id;
   messages.scrollTop = messages.scrollHeight;
 });
 
 socket.on("chat history", (result) => {
-  messages.innerHTML = "";
-  result.forEach((r) => {
-    const date = new Date(r.created_at);
-    const item = `
-      <li>
-        <strong>${r.content}</strong>
-        <div>
-    <p>${r.username}</p>
-    <p>${date.toLocaleTimeString()}</p>
-    </div>
+  let item = "";
 
-      </li>
-    `;
+  if (result.length === 0) {
+    item = `
+    <li>
+      <strong>No messages yet</strong>
+    </li>
+  `;
+  } else {
+    messages.innerHTML = "";
+    result.forEach((r) => {
+      const date = new Date(r.created_at);
+      item += `
+        <li>
+          <strong>${r.content}</strong>
+          <div>
+      <p>${r.username}</p>
+      <p>${date.toLocaleTimeString()}</p>
+      </div>
+  
+        </li>
+      `;
+    });
+  }
 
-    messages.insertAdjacentHTML("beforeend", item);
-  });
+  messages.insertAdjacentHTML("beforeend", item);
 });
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+
   if (input.value) {
     socket.emit("chat message", input.value);
     input.value = "";

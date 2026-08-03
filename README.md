@@ -19,4 +19,4 @@ Mini practice test using the (unofficial) MyAnimeList API-Jikan. (JavaScript fro
 # Backend Development
 
 -NodeJs-Course-Midudev
-NodeJs learning projects. (Node Modules, Creating API, Express, MVC architecture, Validations, MySql/Postgres/Prisma)
+NodeJs learning projects. (Node Modules, Creating API, Express, MVC architecture, Validations, MySql/Postgres/Prisma, WebSockets(Socket.io))

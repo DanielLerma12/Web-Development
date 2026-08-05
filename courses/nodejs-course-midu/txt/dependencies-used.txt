@@ -1,9 +1,12 @@
 
+bcrypt
+cookie-parser
 cors
 dotenv
 eslint-js
 express
 globals
+jsonwebtoken
 morgan
 mysql2
 picocolors

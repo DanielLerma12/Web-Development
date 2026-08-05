@@ -139,9 +139,25 @@ li > div p {
   border: none;
   margin: 4px;
   border-radius: 4px;
+  font-family: "Inter", sans-serif;
 }
 
 #form > button:hover {
+  background-color: rgb(24, 126, 194);
+}
+
+#logout {
+  font-size: small;
+  background-color: rgb(9, 92, 148);
+  border: none;
+  margin: 4px;
+  border-radius: 4px;
+  position: absolute;
+  right: 0;
+  font-family: "Inter", sans-serif;
+}
+
+#logout:hover {
   background-color: rgb(24, 126, 194);
 }
 

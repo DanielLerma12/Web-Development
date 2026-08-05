@@ -88,7 +88,6 @@ export const useUsersStore = create<UsersStore>()(
           const { users, usersForEditing } = get();
 
           if (!Object.values(usersForEditing).every((value) => value === "")) {
-            console.log("edit");
             const updatedUsers = users.map((user) =>
               user.name === usersForEditing.name &&
               user.email === usersForEditing.email &&
@@ -102,7 +101,6 @@ export const useUsersStore = create<UsersStore>()(
               usersForEditing: { name: "", email: "", github: "" },
             });
           } else {
-            console.log("create");
             set((state) => ({
               users: [...state.users, { name, email, github }],
             }));

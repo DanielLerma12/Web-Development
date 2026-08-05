@@ -1,14 +1,16 @@
 ### Web-Development
 
-Several courses and projects from different instructors focused on web development:
+Several courses and projects from different instructors focused on web development
+
+### Languages
+
+-JavaScript-Course-Brais-Moure:
+Basic and intermmediate learning and exercises
 
 # Frontend Development
 
 -HTML-Course-Midudev:
 HTML basics
-
--JavaScript-Brais-Moure:
-JavaScript basic and intermmediate learning and exercises
 
 -React-Course-Midudev:
 Several learning projects using React and Vite. (React, React Router, React Query, Zustand, Typescript)
@@ -19,4 +21,4 @@ Mini practice test using the (unofficial) MyAnimeList API-Jikan. (JavaScript fro
 # Backend Development
 
 -NodeJs-Course-Midudev
-NodeJs learning projects. (Node Modules, Creating API, Express, MVC architecture, Validations, MySql/Postgres/Prisma, WebSockets(Socket.io))
+Several learning projects using Express. (Node Modules, Creating API REST, Express, MVC architecture, Validations, Deployment, MySql/Postgres/Prisma, WebSockets(Socket.io), JWT/Cookies)

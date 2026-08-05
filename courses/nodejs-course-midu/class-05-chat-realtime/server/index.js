@@ -44,9 +44,7 @@ app.use((req, res, next) => {
 app.use(express.static(path.join(process.cwd(), "client/public"))); // sirve css y js
 
 app.get("/", (req, res) => {
-  console.log(req.session.user);
   if (!req.session.user) {
-    console.log("ju");
     return res.sendFile(path.join(process.cwd(), "client/login", "index.html"));
   }
 
@@ -91,7 +89,6 @@ app.post("/register", async (req, res) => {
 });
 
 app.post("/logout", (req, res) => {
-  console.log("LOGOUT");
   res.clearCookie("access_token").json({ message: "Logout successful" });
 });
 

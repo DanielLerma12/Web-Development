@@ -1,5 +1,5 @@
   
-  -Package.json scripts:
+  -Package.json scripts examples:
   
   "scripts": {
     "start:prisma": "node server-with-prisma.js",

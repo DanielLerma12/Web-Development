@@ -24,7 +24,7 @@ loginForm?.addEventListener("submit", (e) => {
       loginSpan.style.color = "rgb(147, 235, 169)";
       loginSpan.style.fontSize = "12px";
       setTimeout(() => {
-        window.location.href = "/protected";
+        window.location.replace("/protected");
       }, 1500);
     } else {
       res.json().then((prompt) => {
@@ -68,7 +68,7 @@ registerForm?.addEventListener("submit", (e) => {
           body: JSON.stringify({ username, password }),
         }).then((res) => {
           if (res.ok) {
-            window.location.href = "/protected";
+            window.location.replace("/protected");
           } else {
             window.location.href = "/";
           }

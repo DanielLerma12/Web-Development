@@ -44,8 +44,11 @@ app.use((req, res, next) => {
 app.use(express.static(path.join(process.cwd(), "client/public"))); // sirve css y js
 
 app.get("/", (req, res) => {
-  if (!req.session.user)
+  console.log(req.session.user);
+  if (!req.session.user) {
+    console.log("ju");
     return res.sendFile(path.join(process.cwd(), "client/login", "index.html"));
+  }
 
   return res.redirect("/protected");
 });

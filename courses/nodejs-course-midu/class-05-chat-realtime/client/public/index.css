@@ -27,10 +27,11 @@ body {
   place-content: center;
   height: 100vh;
   padding: 36px 36px 100px;
+  background-color: #222222;
 }
 
 #chat {
-  background-color: #222222;
+  background-color: #2c2c2c;
   border: 1px solid #ccc;
   border-radius: 5px;
   overflow: hidden;
@@ -127,6 +128,8 @@ li > div p {
   margin: 4px;
 
   padding: 0 8px;
+
+  background-color: #2c2c2c;
 }
 
 #input:focus {
@@ -150,7 +153,8 @@ li > div p {
   font-size: small;
   background-color: rgb(9, 92, 148);
   border: none;
-  margin: 4px;
+  margin-top: 4px;
+  margin-right: 10px;
   border-radius: 4px;
   position: absolute;
   right: 0;

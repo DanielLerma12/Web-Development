@@ -21,14 +21,16 @@ loginForm?.addEventListener("submit", (e) => {
   }).then((res) => {
     if (res.ok) {
       loginSpan.innerText = "Registered successfully. Signin-in";
-      loginSpan.style.color = "green";
+      loginSpan.style.color = "rgb(147, 235, 169)";
+      loginSpan.style.fontSize = "12px";
       setTimeout(() => {
         window.location.href = "/protected";
       }, 1500);
     } else {
       res.json().then((prompt) => {
         loginSpan.innerText = prompt;
-        loginSpan.style.color = "red";
+        loginSpan.style.color = "rgb(235, 147, 147)";
+        loginSpan.style.fontSize = "12px";
       });
     }
   });
@@ -45,7 +47,8 @@ registerForm?.addEventListener("submit", (e) => {
 
   if (password !== confirmPassword) {
     registerSpan.innerText = "Password is not the same. Check again";
-    registerSpan.style.color = "red";
+    registerSpan.style.color = "rgb(235, 147, 147)";
+    registerSpan.style.fontSize = "12px";
     return;
   }
 
@@ -56,7 +59,8 @@ registerForm?.addEventListener("submit", (e) => {
   }).then((res) => {
     if (res.ok) {
       registerSpan.innerText = "Registered successfully. Signing-in";
-      registerSpan.style.color = "green";
+      registerSpan.style.color = "rgb(147, 235, 169)";
+      registerSpan.style.fontSize = "12px";
       setTimeout(() => {
         fetch("/login", {
           method: "POST",
@@ -73,7 +77,8 @@ registerForm?.addEventListener("submit", (e) => {
     } else {
       res.json().then((prompt) => {
         registerSpan.innerText = prompt;
-        registerSpan.style.color = "red";
+        registerSpan.style.color = "rgb(235, 147, 147)";
+        registerSpan.style.fontSize = "12px";
       });
     }
   });

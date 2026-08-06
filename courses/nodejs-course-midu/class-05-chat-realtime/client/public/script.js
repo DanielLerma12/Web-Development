@@ -42,7 +42,7 @@ socket.on("chat message", (result) => {
       <li>
         <strong>${result.content}</strong>
         <div>
-    <p>${result.user.username}</p>
+    <p>${result.users.user_name}</p>
     <p>${date.toLocaleTimeString()}</p>
     </div>
 
@@ -72,7 +72,7 @@ socket.on("chat history", (result) => {
         <li>
           <strong>${r.content}</strong>
           <div>
-      <p>${r.user.username}</p>
+      <p>${r.users.user_name}</p>
       <p>${date.toLocaleTimeString()}</p>
       </div>
   

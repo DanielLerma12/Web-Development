@@ -17,19 +17,20 @@ export const SocketServer = (server) => {
       let result;
       const username = socket.handshake.auth.username;
 
+      console.log(username);
+
       try {
         result = await prisma.messages.create({
           data: {
             content: msg,
-            user: {
+            users: {
               connect: {
                 user_name: username,
               },
             },
-
-            include: {
-              user: true,
-            },
+          },
+          include: {
+            users: true,
           },
         });
         io.emit("chat message", result);
@@ -51,7 +52,7 @@ export const SocketServer = (server) => {
             id: "asc",
           },
           include: {
-            user: true,
+            users: true,
           },
         });
 

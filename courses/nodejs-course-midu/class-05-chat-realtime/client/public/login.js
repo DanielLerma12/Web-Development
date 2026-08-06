@@ -20,7 +20,7 @@ loginForm?.addEventListener("submit", (e) => {
     body: JSON.stringify({ username, password }),
   }).then((res) => {
     if (res.ok) {
-      loginSpan.innerText = "Registered successfully. Signin-in";
+      loginSpan.innerText = "Entering chat...";
       loginSpan.style.color = "rgb(147, 235, 169)";
       loginSpan.style.fontSize = "12px";
       setTimeout(() => {
@@ -58,7 +58,7 @@ registerForm?.addEventListener("submit", (e) => {
     body: JSON.stringify({ username, password }),
   }).then((res) => {
     if (res.ok) {
-      registerSpan.innerText = "Registered successfully. Signing-in";
+      registerSpan.innerText = "Successful. Entering chat...";
       registerSpan.style.color = "rgb(147, 235, 169)";
       registerSpan.style.fontSize = "12px";
       setTimeout(() => {

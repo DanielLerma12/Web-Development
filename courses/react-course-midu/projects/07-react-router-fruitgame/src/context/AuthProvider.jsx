@@ -2,7 +2,9 @@ import { useState } from "react";
 import { AuthContext } from "./authContext";
 
 export const AuthProvider = ({ children }) => {
-  const [isAuth, setIsAuth] = useState(false);
+  const [isAuth, setIsAuth] = useState(
+    Boolean(localStorage.getItem("usuario")),
+  );
 
   const login = (user, password) => {
     if (user !== "horneto") return;

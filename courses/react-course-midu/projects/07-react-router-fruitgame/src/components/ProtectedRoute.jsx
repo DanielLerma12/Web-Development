@@ -5,13 +5,9 @@ export const ProtectedRoute = ({ children }) => {
   const { isAuth } = useAuth();
   const location = useLocation();
 
-  if (
-    localStorage.getItem("usuario") === "horneto" ||
-    localStorage.getItem("password") === "password"
-  )
-    return children;
-
   if (!isAuth) {
     return <Navigate to="/login" replace state={location} />; // state={{location, o mas datos}} para enviar información cargada del usuario a la otra URL
   }
+
+  return children;
 };

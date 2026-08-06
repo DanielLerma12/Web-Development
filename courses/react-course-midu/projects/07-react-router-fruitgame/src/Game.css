@@ -45,6 +45,10 @@
   margin-top: 40px;
 }
 
+.results {
+  margin-bottom: 40px;
+}
+
 .cell {
   background: linear-gradient(135deg, #6c63ff, #8b5cf6);
   border-radius: 12px;

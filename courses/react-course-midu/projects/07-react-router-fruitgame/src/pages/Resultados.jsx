@@ -35,7 +35,7 @@ export const Resultados = () => {
       <ul>
         {resultados.map((resultado, index) => (
           <li key={index}>
-            <Link to={`${index}`}>
+            <Link to={`${index + 1}`}>
               {resultado.Index + " ----> Puntaje: " + resultado.Puntaje}
             </Link>
           </li>

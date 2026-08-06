@@ -21,7 +21,15 @@ export const SocketServer = (server) => {
         result = await prisma.messages.create({
           data: {
             content: msg,
-            username,
+            user: {
+              connect: {
+                user_name: username,
+              },
+            },
+
+            include: {
+              user: true,
+            },
           },
         });
         io.emit("chat message", result);
@@ -36,11 +44,14 @@ export const SocketServer = (server) => {
         const result = await prisma.messages.findMany({
           where: {
             id: {
-              gt: socket.handshake.auth.serverOffset ?? 0, // revisar esto
+              gt: socket.handshake.auth.serverOffset ?? 0,
             },
           },
           orderBy: {
             id: "asc",
+          },
+          include: {
+            user: true,
           },
         });
 

@@ -4,7 +4,7 @@ export const Details = () => {
   const { resultados2 } = useOutletContext();
 
   const { id } = useParams();
-  const indice = Number(id);
+  const indice = Number(id - 1);
 
   return (
     <div
@@ -17,7 +17,7 @@ export const Details = () => {
     >
       <h1>Detalles</h1>
 
-      <div className="grid">
+      <div className="grid results">
         {resultados2[indice]?.matriz.map((celda) => (
           <div
             key={celda.id}

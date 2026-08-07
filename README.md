@@ -1,24 +1,29 @@
 ### Web-Development
 
-Several courses and projects from different instructors focused on web development
+Several courses and testing projects from different instructors focused on web development
 
 ### Languages
 
 -JavaScript-Course-Brais-Moure:
-Basic and intermmediate learning and exercises
+Basic and intermmediate course with exercises
+
+-Typescript-Course-Midu
+Basics
 
 # Frontend Development
 
 -HTML-Course-Midudev:
-HTML basics
+Basics
 
 -React-Course-Midudev:
-Several learning projects using React and Vite. (React, React Router, React Query, Zustand, Typescript)
-
--JikanAPI-Test:
-Mini practice test using the (unofficial) MyAnimeList API-Jikan. (JavaScript front-end, APIs, and some CSS styling)
+Testing projects using React and Vite. (React, React Router, React Query, Zustand, Typescript)
 
 # Backend Development
 
 -NodeJs-Course-Midudev
-Several learning projects using Express. (Node Modules, Creating API REST, Express, MVC architecture, Validations, Deployment, MySql/Postgres/Prisma, WebSockets(Socket.io), JWT/Cookies)
+Testing projects using Express. (Node Modules, REST APIs, Express, MVC, Validation, Deployment, MySql/Postgres/Prisma, WebSockets(Socket.io), JWT/Cookies)
+
+# Tests
+
+-JikanAPI-Test:
+Mini practice test using the (unofficial) MyAnimeList API-Jikan. (JavaScript front-end, APIs, and some CSS styling)
